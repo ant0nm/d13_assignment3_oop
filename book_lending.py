@@ -13,13 +13,13 @@ class Book:
     @classmethod
     def create(cls, title, author, isbn):
         new_book = Book(title, author, isbn)
-        Book.on_shelf.append(new_book)
+        cls.on_shelf.append(new_book)
         return new_book
 
     @classmethod
     def browse(cls):
-        if len(Book.on_shelf) != 0:
-            return random.choice(Book.on_shelf)
+        if len(cls.on_shelf) != 0:
+            return random.choice(cls.on_shelf)
         else:
             return "There are no more books to loan!"
 
@@ -33,7 +33,7 @@ class Book:
     @classmethod
     def overdue(cls):
         overdue_books = []
-        for book in Book.on_loan:
+        for book in cls.on_loan:
             if book.due_date < datetime.now():
                 overdue_books.append(book)
         return overdue_books
