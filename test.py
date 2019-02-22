@@ -1,11 +1,12 @@
 from book_lending import Book
 from datetime import datetime
-import random
 
 # testing out the Book class
-sister_outsider = Book.create("Sister Outsider", "Audre Lorde", "9781515905431")
+sister_outsider = Book.create(
+    "Sister Outsider", "Audre Lorde", "9781515905431")
 aint_i = Book.create("Ain't I a Woman?", "Bell Hooks", "9780896081307")
-if_they_come = Book.create("If They Come in the Morning", "Angela Y. Davis", "0893880221")
+if_they_come = Book.create(
+    "If They Come in the Morning", "Angela Y. Davis", "0893880221")
 print("Browsing for 2 books:")
 print(Book.browse().title)
 print(Book.browse().title)
